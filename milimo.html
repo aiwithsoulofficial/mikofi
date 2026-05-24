@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milimo Brisbane Limousine Service - Luxury Wedding Car Hire, Corporate Transfers & Airport Chauffeur</title>
+    <meta name="description" content="milimo is Brisbane's family-owned luxury limousine service. Bentley, Mercedes-Benz, Maserati and Genesis fleet for weddings, corporate events, and airport transfers across South East Queensland. TripAdvisor 5.0 rated.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "milimo Brisbane Limousine Service",
+        "description": "Family-owned Brisbane luxury limousine and chauffeur service specialising in wedding car hire, corporate transfers, and airport transport across South East Queensland. Fleet includes Bentley Continental, Maserati Quattroporte, Mercedes-Benz S-Class, and Genesis G80.",
+        "url": "https://milimo.com.au",
+        "telephone": "+611300884536",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geebung",
+            "addressRegion": "QLD",
+            "postalCode": "4034",
+            "addressCountry": "AU"
+        },
+        "areaServed": ["Brisbane", "Gold Coast", "Sunshine Coast", "Northern NSW"],
+        "openingHours": "Mo-Su 00:00-23:59",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "ratingCount": "41",
+            "reviewCount": "41"
+        },
+        "priceRange": "$$-$$$"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does wedding car hire cost in Brisbane?",
+                "acceptedAnswer": { "@type": "Answer", "text": "milimo offers luxury wedding car hire packages starting from competitive rates tailored to your specific requirements. Pricing depends on vehicle selection (Bentley Continental, Genesis G80, Mercedes-Benz S-Class), number of vehicles, duration, and travel distance. Contact milimo on 1300 884 536 for a personalised quote." }
+            },
+            {
+                "@type": "Question",
+                "name": "What luxury vehicles does milimo have in their fleet?",
+                "acceptedAnswer": { "@type": "Answer", "text": "milimo operates one of Brisbane's most diverse luxury fleets including Bentley Continental Flying Spur, Maserati Quattroporte, Mercedes-Benz S-Class, Mercedes-Benz GLS 63 AMG, Genesis G80, Genesis GV80, Audi A8L, Porsche Cayenne, plus stretch limousines, Mercedes V-Class, VIP Sprinters, and coaches seating up to 57 passengers." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does milimo offer airport transfers from Brisbane Airport?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. milimo provides luxury airport transfers from Brisbane Airport to Brisbane CBD, Gold Coast, Sunshine Coast, and Northern NSW. Chauffeurs track flight arrivals in real-time and adjust for delays. Door-to-door service with meet-and-greet available." }
+            },
+            {
+                "@type": "Question",
+                "name": "What areas does milimo service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "milimo provides luxury limousine and chauffeur services across South East Queensland including Brisbane CBD, greater Brisbane, Gold Coast, Sunshine Coast, and Northern NSW. The service operates 24/7 with professional chauffeurs." }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --charcoal: #1A1A1A;
+            --dark: #0D0D0D;
+            --silver: #C0C0C0;
+            --silver-light: #D8D8D8;
+            --gold: #B8995A;
+            --gold-light: #D4B87A;
+            --cream: #F5F2ED;
+            --white: #FFFFFF;
+            --text-muted: rgba(255,255,255,0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; color: var(--white); background: var(--dark); overflow-x: hidden; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 1.2rem 3rem;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+        }
+        nav.scrolled {
+            background: rgba(13,13,13,0.95); backdrop-filter: blur(20px);
+            padding: 0.8rem 3rem; box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+        .nav-logo img { height: 50px; width: auto; transition: height 0.3s; }
+        nav.scrolled .nav-logo img { height: 38px; }
+        .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+        .nav-links a {
+            color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.8rem;
+            font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta {
+            background: var(--gold) !important; color: var(--dark) !important;
+            padding: 0.6rem 1.5rem; border-radius: 2px; font-weight: 500 !important;
+        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .hamburger span { width: 25px; height: 2px; background: white; transition: all 0.3s; }
+
+        /* HERO */
+        .hero {
+            position: relative; height: 100vh; min-height: 700px;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .hero video {
+            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 0 2rem;
+        }
+        .hero-badge {
+            display: inline-block; font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;
+            color: var(--gold); border: 1px solid rgba(184,153,90,0.3);
+            padding: 0.5rem 2rem; margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(2.8rem,6vw,5.5rem);
+            font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem;
+        }
+        .hero h1 em { font-style: italic; color: var(--gold); }
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem,1.8vw,1.4rem);
+            color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;
+        }
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem; font-size: 0.75rem; letter-spacing: 2.5px;
+            text-transform: uppercase; text-decoration: none; font-weight: 500; transition: all 0.3s;
+            cursor: pointer; border: none; font-family: 'Inter', sans-serif;
+        }
+        .btn-gold { background: var(--gold); color: var(--dark); }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(184,153,90,0.3); }
+        .btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: white; background: transparent; }
+        .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+        .hero-scroll {
+            position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 2;
+            color: rgba(255,255,255,0.4); font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+            display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+        }
+        .hero-scroll .line {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        /* SECTIONS */
+        section { padding: 7rem 2rem; }
+        .tag {
+            font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--gold); font-weight: 500; margin-bottom: 1.2rem;
+        }
+        .stitle {
+            font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.8rem);
+            font-weight: 400; line-height: 1.2; margin-bottom: 1.2rem;
+        }
+        .stext {
+            font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 550px;
+        }
+
+        /* FLEET */
+        .fleet { background: var(--dark); }
+        .fleet-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+        .fleet-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .fleet-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 3px; overflow: hidden; transition: all 0.4s;
+        }
+        .fleet-card:hover {
+            background: rgba(255,255,255,0.06); border-color: rgba(184,153,90,0.3);
+            transform: translateY(-5px);
+        }
+        .fleet-card-img { height: 240px; overflow: hidden; }
+        .fleet-card-img img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s;
+        }
+        .fleet-card:hover .fleet-card-img img { transform: scale(1.06); }
+        .fleet-card-body { padding: 1.8rem; }
+        .fleet-card-type {
+            font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 0.5rem;
+        }
+        .fleet-card-name {
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 500;
+        }
+        .fleet-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+        /* SERVICES */
+        .services { background: #111; }
+        .services-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+        }
+        .service-list { display: flex; flex-direction: column; gap: 2rem; }
+        .service-item { display: flex; gap: 1.5rem; align-items: flex-start; }
+        .service-icon {
+            width: 48px; height: 48px; min-width: 48px; border: 1px solid var(--gold);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+        .service-item h4 {
+            font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 500;
+        }
+        .service-item p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+        .services-img { border-radius: 3px; overflow: hidden; height: 600px; }
+        .services-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* IMAGE BREAK */
+        .img-break {
+            position: relative; height: 450px; overflow: hidden;
+        }
+        .img-break img { width: 100%; height: 100%; object-fit: cover; }
+        .img-break-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.55);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .img-break-content { text-align: center; max-width: 700px; padding: 0 2rem; }
+        .big-quote {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem,2.5vw,2.2rem);
+            font-style: italic; line-height: 1.4; margin-bottom: 1rem;
+        }
+        .big-quote .gold { color: var(--gold); }
+
+        /* REVIEWS */
+        .reviews { background: var(--dark); }
+        .reviews-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+        .review-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .review-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 3px; padding: 2rem;
+        }
+        .review-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 1rem; }
+        .review-text {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+            font-style: italic; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 1.2rem;
+        }
+        .review-author { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+        /* CTA */
+        .cta-section { background: #111; }
+        .cta-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+        }
+        .cta-form { display: flex; flex-direction: column; gap: 1rem; }
+        .cta-form input, .cta-form select, .cta-form textarea {
+            width: 100%; padding: 0.9rem 1.2rem; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); color: white;
+            font-family: 'Inter', sans-serif; font-size: 0.85rem; border-radius: 2px;
+            outline: none; transition: border-color 0.3s;
+        }
+        .cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+        .cta-form input:focus, .cta-form select:focus, .cta-form textarea:focus { border-color: var(--gold); }
+        .cta-form select option { background: var(--dark); }
+        .cta-form textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .contact-info { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+        .contact-item span:first-child {
+            display: block; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 0.3rem;
+        }
+        .contact-item a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.95rem; }
+        .contact-item a:hover { color: var(--gold); }
+
+        /* FOOTER */
+        footer {
+            background: #080808; padding: 3rem 2rem 1.5rem;
+            color: rgba(255,255,255,0.3); font-size: 0.75rem;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-inner img { height: 35px; width: auto; opacity: 0.6; }
+
+        /* GRAIN */
+        .grain {
+            position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .fleet-grid, .review-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid, .cta-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .services-img { height: 350px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: flex; }
+            section { padding: 4.5rem 1.5rem; }
+            .fleet-grid, .review-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .img-break { height: 300px; }
+            .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="#" class="nav-logo"><img src="https://milimo.com.au/wp-content/uploads/2022/04/Milimo-Logo.jpg" alt="milimo Brisbane Limousine Service"></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=1920">
+        <source src="https://videos.pexels.com/video-files/3945024/3945024-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">Brisbane's Family-Owned Luxury Fleet</div>
+        <h1>Arrive in <em>style</em></h1>
+        <p class="hero-sub">
+            Bentley. Mercedes. Maserati. Genesis. From your wedding day to the boardroom,
+            milimo delivers luxury chauffeur experiences across South East Queensland.
+        </p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn btn-gold">Get a Quote</a>
+            <a href="#fleet" class="btn btn-ghost">View Our Fleet</a>
+        </div>
+    </div>
+    <div class="hero-scroll"><span>Explore</span><div class="line"></div></div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+    <div class="fleet-header">
+        <div class="tag reveal">The Fleet</div>
+        <h2 class="stitle reveal rd1">European prestige.<br>Immaculate presentation.</h2>
+        <p class="stext reveal rd2" style="margin: 0 auto;">15+ luxury vehicles from intimate sedans to 57-seat coaches. Whatever the occasion, whatever the size.</p>
+    </div>
+    <div class="fleet-grid">
+        <div class="fleet-card reveal">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bentley Continental Flying Spur">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Flagship</div>
+                <h3 class="fleet-card-name">Bentley Continental Flying Spur</h3>
+                <p class="fleet-card-desc">The ultimate wedding car. Handcrafted luxury, iconic presence. Available in black and white.</p>
+            </div>
+        </div>
+        <div class="fleet-card reveal rd1">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mercedes-Benz S-Class">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Executive</div>
+                <h3 class="fleet-card-name">Mercedes-Benz S-Class</h3>
+                <p class="fleet-card-desc">The benchmark of executive luxury. Perfect for corporate transfers and VIP airport pickups.</p>
+            </div>
+        </div>
+        <div class="fleet-card reveal rd2">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Maserati Quattroporte">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Sport Luxury</div>
+                <h3 class="fleet-card-name">Maserati Quattroporte</h3>
+                <p class="fleet-card-desc">Twin-turbo V6, Italian craftsmanship. For those who want performance with elegance.</p>
+            </div>
+        </div>
+        <div class="fleet-card reveal">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Genesis G80 White">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Modern Classic</div>
+                <h3 class="fleet-card-name">Genesis G80</h3>
+                <p class="fleet-card-desc">Stunning in white. A new icon for modern weddings with breathtaking interior design.</p>
+            </div>
+        </div>
+        <div class="fleet-card reveal rd1">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Luxury sedan interior">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Stretch</div>
+                <h3 class="fleet-card-name">Chrysler 300 Stretch</h3>
+                <p class="fleet-card-desc">The classic stretch limo experience. School formals, hens nights, and celebrations.</p>
+            </div>
+        </div>
+        <div class="fleet-card reveal rd2">
+            <div class="fleet-card-img">
+                <img src="https://images.pexels.com/photos/2676096/pexels-photo-2676096.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mercedes VIP Sprinter">
+            </div>
+            <div class="fleet-card-body">
+                <div class="fleet-card-type">Group Transport</div>
+                <h3 class="fleet-card-name">Mercedes VIP Sprinter</h3>
+                <p class="fleet-card-desc">16-seat VIP configuration. Corporate groups, wedding parties, event logistics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break">
+    <img src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Luxury car at sunset">
+    <div class="img-break-overlay">
+        <div class="img-break-content">
+            <p class="big-quote">"Family-owned. Personally driven. Every detail <span class="gold">matters to us</span> because every moment matters to you."</p>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="services-grid">
+        <div>
+            <div class="tag reveal">Our Services</div>
+            <h2 class="stitle reveal rd1">More than transport.<br>An experience.</h2>
+            <div class="service-list" style="margin-top: 2.5rem;">
+                <div class="service-item reveal">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8995A" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Weddings</h4>
+                        <p>Your day deserves perfection. Bentley for the bride, matching fleet for the bridal party, red carpet, ribbons, champagne. We handle every detail.</p>
+                    </div>
+                </div>
+                <div class="service-item reveal rd1">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8995A" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div>
+                        <h4>Corporate</h4>
+                        <p>Client entertainment, conference logistics, executive transfers. Professional chauffeurs with security backgrounds. Corporate accounts available.</p>
+                    </div>
+                </div>
+                <div class="service-item reveal rd2">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8995A" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Airport Transfers</h4>
+                        <p>Brisbane, Gold Coast, Sunshine Coast. Flight tracking, meet-and-greet, door-to-door luxury. 24/7 availability.</p>
+                    </div>
+                </div>
+                <div class="service-item reveal rd3">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8995A" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                    </div>
+                    <div>
+                        <h4>Events & Formals</h4>
+                        <p>School formals, concerts, races, hens nights, birthdays. From intimate sedans to stretch limos and coaches for up to 57 guests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="services-img reveal">
+            <img src="https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wedding couple with luxury car">
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+    <div class="reviews-header">
+        <div class="tag reveal">What Our Clients Say</div>
+        <h2 class="stitle reveal rd1">5.0 on TripAdvisor.<br>4.9 on Easy Weddings.</h2>
+        <p class="stext reveal rd2" style="margin: 0 auto;">Travellers' Choice award winner. 40+ five-star reviews across platforms.</p>
+    </div>
+    <div class="review-grid">
+        <div class="review-card reveal">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Adrian was absolutely incredible. The Bentley was immaculate, he arrived early, and made our wedding day even more special. Could not recommend milimo highly enough."</p>
+            <div class="review-author">Wedding Client - Brisbane</div>
+        </div>
+        <div class="review-card reveal rd1">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Professional, punctual, and the cars are stunning. We use milimo for all our corporate client transfers and they never disappoint. First-class service every time."</p>
+            <div class="review-author">Corporate Client - Brisbane CBD</div>
+        </div>
+        <div class="review-card reveal rd2">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"From the moment we booked to the moment we arrived at the reception, everything was perfect. The Genesis G80 was absolutely beautiful. Thank you Adrian and the milimo team!"</p>
+            <div class="review-author">Wedding Client - Gold Coast</div>
+        </div>
+    </div>
+</section>
+
+<!-- IMAGE BREAK 2 -->
+<div class="img-break">
+    <img src="https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="City lights at night">
+    <div class="img-break-overlay">
+        <div class="img-break-content">
+            <p class="big-quote">Serving Brisbane, Gold Coast, Sunshine Coast & Northern NSW. <span class="gold">24/7 availability.</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+    <div class="cta-grid">
+        <div>
+            <div class="tag reveal">Get In Touch</div>
+            <h2 class="stitle reveal rd1">Ready to book<br>your experience?</h2>
+            <p class="stext reveal rd2">Tell us about your event and we'll tailor a package to match. Whether it's a wedding, corporate transfer, or airport pickup - we'd love to hear from you.</p>
+            <div class="contact-info reveal rd3">
+                <div class="contact-item">
+                    <span>Phone</span>
+                    <span><a href="tel:1300884536">1300 884 536</a></span>
+                </div>
+                <div class="contact-item">
+                    <span>Mobile</span>
+                    <span><a href="tel:+61409969992">0409 969 992</a></span>
+                </div>
+                <div class="contact-item">
+                    <span>Email</span>
+                    <span><a href="mailto:leanne@milimo.com.au">leanne@milimo.com.au</a></span>
+                </div>
+                <div class="contact-item">
+                    <span>Location</span>
+                    <span><a href="#">Geebung, Brisbane QLD 4034</a></span>
+                </div>
+            </div>
+        </div>
+        <form class="cta-form reveal rd2" onsubmit="event.preventDefault(); alert('Thanks! This is a mockup - Leanne will receive your enquiry on the live site.');">
+            <div class="form-row">
+                <input type="text" placeholder="Your name" required>
+                <input type="tel" placeholder="Phone number" required>
+            </div>
+            <input type="email" placeholder="Email address" required>
+            <select>
+                <option value="" disabled selected>What do you need?</option>
+                <option>Wedding car hire</option>
+                <option>Corporate transfer</option>
+                <option>Airport transfer</option>
+                <option>School formal</option>
+                <option>Event / celebration</option>
+                <option>Other</option>
+            </select>
+            <input type="text" placeholder="Event date">
+            <textarea placeholder="Tell us about your event..."></textarea>
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1.1rem;">Send Enquiry</button>
+        </form>
+    </div>
+</section>
+
+<!-- FAQ (GEO) -->
+<section style="background: #0A0A0A; padding: 5rem 2rem;" id="faq">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div class="tag reveal" style="text-align: center;">Common Questions</div>
+        <h2 class="stitle reveal rd1" style="text-align: center;">Frequently asked</h2>
+        <div style="margin-top: 2.5rem;">
+            <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.3rem 0; cursor: pointer;">
+                <summary style="font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.85); font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How much does wedding car hire cost in Brisbane?<span style="color: var(--gold); font-size: 1.3rem;">+</span></summary>
+                <p style="padding-top: 0.8rem; font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7;">milimo offers luxury wedding car hire packages tailored to your specific requirements. Pricing depends on vehicle selection (Bentley Continental, Genesis G80, Mercedes-Benz S-Class), number of vehicles, duration, and travel distance. We offer everything from single-vehicle packages to full fleet coordination for your entire bridal party. Call 1300 884 536 for a personalised quote.</p>
+            </details>
+            <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.3rem 0; cursor: pointer;">
+                <summary style="font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.85); font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">How far in advance should I book a wedding car?<span style="color: var(--gold); font-size: 1.3rem;">+</span></summary>
+                <p style="padding-top: 0.8rem; font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7;">We recommend booking 6-12 months in advance for weddings, particularly during peak season (September to April). Popular vehicles like the Bentley Continental and Genesis G80 book up quickly. However, we always try to accommodate last-minute requests - call us to check availability.</p>
+            </details>
+            <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.3rem 0; cursor: pointer;">
+                <summary style="font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.85); font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">Do you track flight arrivals for airport transfers?<span style="color: var(--gold); font-size: 1.3rem;">+</span></summary>
+                <p style="padding-top: 0.8rem; font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7;">Yes. Our chauffeurs monitor flight arrivals in real-time and adjust pickup times accordingly. If your flight is delayed, we'll be there when you land - no extra charge. We provide door-to-door luxury airport transfers between Brisbane Airport and Brisbane CBD, Gold Coast, Sunshine Coast, and Northern NSW.</p>
+            </details>
+            <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.3rem 0; cursor: pointer;">
+                <summary style="font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.85); font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">What areas does milimo service?<span style="color: var(--gold); font-size: 1.3rem;">+</span></summary>
+                <p style="padding-top: 0.8rem; font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7;">milimo provides luxury limousine and chauffeur services across all of South East Queensland including Brisbane CBD, greater Brisbane, Gold Coast, Sunshine Coast, Toowoomba, and Northern NSW. We operate 24 hours a day, 7 days a week with professional chauffeurs trained in defensive driving.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <img src="https://milimo.com.au/wp-content/uploads/2022/04/Milimo-Logo.jpg" alt="milimo">
+        <span>&copy; 2026 milimo Brisbane Limousine Service. ABN 79 603 892 256. Geebung, QLD 4034.</span>
+    </div>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80));
+    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active')));
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if(t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+</script>
+
+</body>
+</html>
