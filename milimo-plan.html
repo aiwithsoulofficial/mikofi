@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milimo - SEO, GEO & Social Media Action Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F8F4EF;
+            --cream-dark: #EDE6DB;
+            --navy: #1B2A4A;
+            --navy-light: #2C3E66;
+            --rose: #C4A67D;
+            --rose-light: #D4BC9A;
+            --rose-dark: #A8895F;
+            --text: #2D2926;
+            --text-light: #6B6560;
+            --white: #FFFFFF;
+            --green: #27AE60;
+            --red: #C0392B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #E8E0D6; color: var(--text); line-height: 1.6; }
+        .page { width: 210mm; min-height: 297mm; margin: 20px auto; background: var(--cream); position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; page-break-after: always; } }
+
+        .bar { height: 5px; background: linear-gradient(90deg, var(--rose), var(--navy), var(--rose)); }
+        .cover { display: flex; flex-direction: column; justify-content: space-between; min-height: 297mm; }
+        .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 70px; position: relative; }
+        .cover-body::after { content: ''; position: absolute; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(196,166,125,0.12); right: -40px; top: 50%; transform: translateY(-50%); }
+        .tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: 25px; }
+        .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 400; color: var(--navy); line-height: 1.15; margin-bottom: 18px; }
+        .cover h1 em { font-style: italic; color: var(--rose-dark); }
+        .cover .sub { font-size: 15px; color: var(--text-light); max-width: 440px; line-height: 1.7; margin-bottom: 45px; }
+        .meta { display: flex; gap: 40px; }
+        .meta-item span:first-child { display: block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: 3px; }
+        .meta-item span:last-child { font-size: 14px; color: var(--navy); font-weight: 500; }
+        .cover-foot { padding: 25px 70px; border-top: 1px solid var(--cream-dark); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--navy); font-weight: 600; }
+        .logo span { color: var(--rose-dark); font-weight: 400; font-style: italic; }
+        .cover-foot small { font-size: 10px; color: var(--text-light); }
+
+        .cp { padding: 45px 70px 55px; min-height: 297mm; position: relative; }
+        .ph { display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; padding-bottom: 12px; border-bottom: 1px solid var(--cream-dark); }
+        .ph .logo { font-size: 13px; }
+        .pn { font-size: 10px; color: var(--text-light); letter-spacing: 2px; }
+        .st { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 15px; }
+        .si { font-size: 13px; color: var(--text-light); line-height: 1.7; max-width: 520px; margin-bottom: 30px; }
+
+        .card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 22px 26px; margin-bottom: 14px; position: relative; }
+        .card:hover { border-color: var(--rose-light); }
+        .card .pri { position: absolute; top: 0; left: 0; width: 4px; height: 100%; border-radius: 4px 0 0 4px; }
+        .pri.crit { background: var(--red); }
+        .pri.high { background: var(--rose-dark); }
+        .pri.med { background: var(--navy-light); }
+        .pri.done { background: var(--green); }
+        .card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .card-num { font-family: 'Cormorant Garamond', serif; font-size: 12px; color: var(--rose-dark); font-weight: 600; margin-bottom: 3px; }
+        .card-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+        .card-tags { display: flex; gap: 6px; flex-shrink: 0; margin-left: 12px; }
+        .pill { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
+        .pill.seo { background: rgba(27,42,74,0.1); color: var(--navy); }
+        .pill.geo { background: rgba(196,166,125,0.15); color: var(--rose-dark); }
+        .pill.social { background: rgba(39,174,96,0.1); color: var(--green); }
+        .pill.tech { background: rgba(192,57,43,0.1); color: var(--red); }
+        .card-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+        .card-detail { font-size: 11px; color: var(--text); background: var(--cream); padding: 10px 14px; border-radius: 3px; line-height: 1.6; margin-top: 10px; }
+        .card-detail strong { color: var(--navy); }
+
+        .callout { background: var(--navy); color: white; border-radius: 4px; padding: 28px; margin: 20px 0; }
+        .callout .tag { color: var(--rose-light); }
+        .callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 10px; }
+        .callout p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .callout-stats { display: flex; gap: 30px; margin-top: 18px; }
+        .cs-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--rose-light); }
+        .cs-lab { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+        .s-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 20px; }
+        .s-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--navy); margin-bottom: 8px; font-weight: 600; }
+        .s-card p { font-size: 11px; color: var(--text-light); line-height: 1.6; }
+        .s-card .s-freq { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 6px; font-weight: 500; }
+
+        .pillar { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+        .pillar-icon { width: 36px; height: 36px; min-width: 36px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--rose-light); font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; }
+        .pillar-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--navy); font-weight: 600; margin-bottom: 3px; }
+        .pillar-body p { font-size: 11px; color: var(--text-light); line-height: 1.5; }
+
+        .week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 15px; }
+        .day { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 3px; padding: 8px 6px; text-align: center; }
+        .day-name { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; margin-bottom: 4px; }
+        .day-type { font-size: 9px; color: var(--navy); font-weight: 500; line-height: 1.3; }
+        .day-plat { font-size: 8px; color: var(--text-light); margin-top: 3px; }
+
+        .footer-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--rose), var(--navy), var(--rose)); }
+        .conf { text-align: center; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-top: 25px; padding-top: 18px; border-top: 1px solid var(--cream-dark); }
+    </style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="page cover">
+    <div class="bar"></div>
+    <div class="cover-body">
+        <div class="tag">SEO + AI Search + Social Media Strategy</div>
+        <h1>The milimo<br><em>Visibility Plan</em></h1>
+        <p class="sub">
+            A complete action plan to get milimo found in Google, cited by AI search engines,
+            and building a social audience that converts. Everything Leanne and Adrian need
+            to move the needle immediately.
+        </p>
+        <div class="meta">
+            <div class="meta-item">
+                <span>Prepared For</span>
+                <span>Leanne & Adrian Barsby</span>
+            </div>
+            <div class="meta-item">
+                <span>Date</span>
+                <span>24 May 2026</span>
+            </div>
+            <div class="meta-item">
+                <span>Current Score</span>
+                <span>4.9 / 10</span>
+            </div>
+        </div>
+    </div>
+    <div class="cover-foot">
+        <div class="logo">AI <span>with Soul</span></div>
+        <small>kelly@aiwithsoul.com.au</small>
+    </div>
+</div>
+
+<!-- ═══ PAGE 2: WHERE YOU STAND ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">02</div></div>
+
+    <div class="tag">Current State</div>
+    <h2 class="st">Where milimo stands today</h2>
+    <p class="si">I've audited your website, search presence, and social profiles across 15 dimensions. Here's the honest picture - and the good news is most of this is fixable fast.</p>
+
+    <div class="callout">
+        <div class="callout-stats">
+            <div><div class="cs-num">4.9</div><div class="cs-lab">SEO Score / 10</div></div>
+            <div><div class="cs-num">2</div><div class="cs-lab">AI Search / 10</div></div>
+            <div><div class="cs-num">196</div><div class="cs-lab">Instagram Followers</div></div>
+            <div><div class="cs-num">5yr</div><div class="cs-lab">Review Gap</div></div>
+        </div>
+    </div>
+
+    <div class="tag" style="margin-top: 25px;">What's Already Strong</div>
+    <div class="card" style="border-left: 3px solid var(--green);">
+        <div class="card-desc">
+            <strong>TripAdvisor 5.0/5.0</strong> with Travellers' Choice (top 10%). <strong>Easy Weddings 4.9/5.0</strong> with 25 reviews. <strong>30+ venue-specific pages</strong> - a smart local SEO play most competitors don't have. <strong>Fleet diversity</strong> from Bentley to 57-seat coaches is genuinely rare. <strong>Domain age since ~2000</strong> gives authority money can't buy. Customers praise Adrian and the family by name - that personal touch is your unfair advantage.
+        </div>
+    </div>
+
+    <div class="tag" style="margin-top: 25px;">The Three Biggest Gaps</div>
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-title">1. Invisible to AI search engines</div>
+        <div class="card-desc" style="margin-top: 8px;">Zero FAQ sections, zero FAQ schema, no entity definition paragraph. When someone asks ChatGPT or Google AI "best Brisbane limousine" - milimo won't be cited. This is the single biggest opportunity.</div>
+    </div>
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-title">2. Google Business Profile is weak or unclaimed</div>
+        <div class="card-desc" style="margin-top: 8px;">No full address on the website, no Google Maps embed, no business hours listed. You're not showing up in the Google Maps 3-pack where most local searches convert.</div>
+    </div>
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-title">3. Social presence doesn't match service quality</div>
+        <div class="card-desc" style="margin-top: 8px;">196 Instagram followers after 15+ years. Your 5-star service reputation isn't translating online. Competitors with worse reviews but better content are winning the scroll.</div>
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+<!-- ═══ PAGE 3: SEO ACTION PLAN ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">03</div></div>
+
+    <div class="tag">Part 1: SEO</div>
+    <h2 class="st">Search engine fixes</h2>
+    <p class="si">These are the changes we'll code directly into your WordPress site. Ranked by impact.</p>
+
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-head">
+            <div><div class="card-num">01</div><div class="card-title">Fix meta description typos</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">10 min</span></div>
+        </div>
+        <div class="card-desc">Your homepage says "Mercesdes-Benz", fleet page says "Merecdes" and "afforable", blog says "Coprorate". These are the first thing Google searchers see. Kills credibility before they click.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-head">
+            <div><div class="card-num">02</div><div class="card-title">Add full address, hours, and Google Map</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">15 min</span></div>
+        </div>
+        <div class="card-desc">Contact page only shows "Geebung, Queensland". No street address, no map, no hours. Google needs this for the Maps 3-pack - where most local limo searches convert.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-head">
+            <div><div class="card-num">03</div><div class="card-title">Claim and optimise Google Business Profile</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">30 min</span></div>
+        </div>
+        <div class="card-desc">Full profile with all services, 20+ vehicle photos, business hours, service areas, and a direct link from the website. Start requesting Google reviews from every recent client.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">04</div><div class="card-title">Fix page titles - unique keyword per page</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">15 min</span></div>
+        </div>
+        <div class="card-desc">Fleet, Contact, and Reviews all say "Wedding Car Hire Brisbane" - confuses Google about what each page is for. Each page gets its own primary keyword.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">05</div><div class="card-title">Add LocalBusiness + Review schema</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill geo">GEO</span></div>
+        </div>
+        <div class="card-desc">JSON-LD structured data on every page: business name, full address, geo coordinates, phone, hours, service area, aggregate rating. Plus Review schema on your testimonials page to unlock gold stars in Google results.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">06</div><div class="card-title">Consolidate airport transfer pages</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">1 hr</span></div>
+        </div>
+        <div class="card-desc">You have 4+ airport transfer pages competing against each other. Merge into one authoritative page with sections, redirect the others. Same ranking signals, focused on one URL.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri med"></div>
+        <div class="card-head">
+            <div><div class="card-num">07</div><div class="card-title">Remove outdated content</div></div>
+            <div class="card-tags"><span class="pill seo">SEO</span><span class="pill tech">20 min</span></div>
+        </div>
+        <div class="card-desc">COVID-safe page, quarantine transfers page - noindex or redirect these. Stale content drags down your overall quality signals.</div>
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+<!-- ═══ PAGE 4: GEO / AI SEARCH ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">04</div></div>
+
+    <div class="tag">Part 2: GEO - AI Search Optimisation</div>
+    <h2 class="st">Getting cited by AI</h2>
+    <p class="si">This is where the game is shifting. When someone asks ChatGPT, Perplexity, or Google AI Overview about Brisbane limos - your site needs to be the answer they extract. Here's how we make that happen.</p>
+
+    <div class="callout">
+        <div class="tag">Why This Matters Now</div>
+        <h3>AI search is replacing the first page of Google</h3>
+        <p>40%+ of Google searches now trigger an AI Overview. Perplexity and ChatGPT handle millions of "best X in Y" queries daily. If your content isn't structured for AI extraction, you're invisible to a growing chunk of your potential customers - regardless of your Google rank.</p>
+    </div>
+
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-head">
+            <div><div class="card-num">08</div><div class="card-title">Add FAQ sections with schema to top 3 pages</div></div>
+            <div class="card-tags"><span class="pill geo">GEO</span><span class="pill seo">SEO</span></div>
+        </div>
+        <div class="card-desc">This is the #1 GEO fix. AI engines extract Q&A content preferentially.</div>
+        <div class="card-detail">
+            <strong>Weddings:</strong> How much does a wedding car cost in Brisbane? How far ahead to book? Decorations included? Multiple trips?<br>
+            <strong>Airport:</strong> Cost to Gold Coast? Flight tracking? Delayed flight policy?<br>
+            <strong>Corporate:</strong> Corporate accounts? Conference logistics? After-hours?
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="pri crit"></div>
+        <div class="card-head">
+            <div><div class="card-num">09</div><div class="card-title">Write the definitive entity paragraph</div></div>
+            <div class="card-tags"><span class="pill geo">GEO</span></div>
+        </div>
+        <div class="card-desc">One clean, citable paragraph that AI engines will quote when asked about milimo:</div>
+        <div class="card-detail">
+            <em>"milimo is a family-owned Brisbane limousine service established in 2010, specialising in luxury wedding car hire, corporate chauffeur services, and airport transfers across South East Queensland. Based in Geebung, Brisbane, milimo operates a fleet of 15+ vehicles including Bentley Continental, Maserati Quattroporte, Genesis G80, and Mercedes-Benz models. Rated 5.0 on TripAdvisor and 4.9 on Easy Weddings, milimo serves Brisbane, Gold Coast, and Sunshine Coast with 24/7 availability."</em>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">10</div><div class="card-title">Rewrite the About page (320 words to 800+)</div></div>
+            <div class="card-tags"><span class="pill geo">GEO</span><span class="pill seo">SEO</span></div>
+        </div>
+        <div class="card-desc">AI engines build knowledge graphs from About pages. Yours needs: founder names, founding year, team details, number of weddings/events completed, awards with years, service philosophy, what makes milimo different. Real detail, not marketing fluff.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">11</div><div class="card-title">Create a "Brisbane Wedding Car Guide" pillar page</div></div>
+            <div class="card-tags"><span class="pill geo">GEO</span><span class="pill seo">SEO</span></div>
+        </div>
+        <div class="card-desc">3,000+ word comprehensive guide. AI engines cite the most complete source on a topic. Cover: how to choose, what it costs, timing tips, venue-specific advice (leverage your 30+ venue pages), vehicle comparison, FAQs. This becomes THE page AI cites for Brisbane wedding cars.</div>
+    </div>
+
+    <div class="card">
+        <div class="pri high"></div>
+        <div class="card-head">
+            <div><div class="card-num">12</div><div class="card-title">Add pricing guidance</div></div>
+            <div class="card-tags"><span class="pill geo">GEO</span></div>
+        </div>
+        <div class="card-desc">AI engines can't cite pricing that doesn't exist. Even ranges ("Wedding packages from $X") give AI something to reference. Competitors who share pricing get cited - those who don't, don't.</div>
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+<!-- ═══ PAGE 5: SOCIAL MEDIA STRATEGY ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">05</div></div>
+
+    <div class="tag">Part 3: Social Media Strategy</div>
+    <h2 class="st">From 196 followers to a<br>brand people follow</h2>
+    <p class="si">milimo's service is 5-star. The social presence should match. This isn't about going viral - it's about showing up consistently so when someone searches "Brisbane limo" on Instagram or TikTok, milimo is everywhere.</p>
+
+    <div class="tag" style="margin-top: 20px;">Content Pillars</div>
+    <div class="pillar">
+        <div class="pillar-icon">1</div>
+        <div class="pillar-body">
+            <h4>The Fleet (40% of content)</h4>
+            <p>Cinematic vehicle walkarounds, interior detail shots, fleet parked in beautiful locations. This is your visual hero content. Film each car in golden hour light. Reels, carousels, stories.</p>
+        </div>
+    </div>
+    <div class="pillar">
+        <div class="pillar-icon">2</div>
+        <div class="pillar-body">
+            <h4>Real Events (30% of content)</h4>
+            <p>Wedding day BTS, bridal party arrivals, school formals, corporate pickups. Ask permission to film 15 seconds at each event. User-generated content from happy clients. Before/after of event setups.</p>
+        </div>
+    </div>
+    <div class="pillar">
+        <div class="pillar-icon">3</div>
+        <div class="pillar-body">
+            <h4>Behind the Scenes (20% of content)</h4>
+            <p>Adrian prepping a car, the family story, day-in-the-life, vehicle detailing, route planning. This humanises the brand. People book people, not cars.</p>
+        </div>
+    </div>
+    <div class="pillar">
+        <div class="pillar-icon">4</div>
+        <div class="pillar-body">
+            <h4>Social Proof + Education (10% of content)</h4>
+            <p>Client testimonial graphics, review screenshots, "how to choose a wedding car" tips, venue guides. Build authority and trust.</p>
+        </div>
+    </div>
+
+    <div class="tag" style="margin-top: 25px;">Weekly Content Calendar</div>
+    <div class="week-grid">
+        <div class="day">
+            <div class="day-name">Mon</div>
+            <div class="day-type">Fleet Feature</div>
+            <div class="day-plat">IG Reel + TikTok</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Tue</div>
+            <div class="day-type">Testimonial</div>
+            <div class="day-plat">IG Story + Post</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Wed</div>
+            <div class="day-type">BTS / Family</div>
+            <div class="day-plat">IG Reel + TikTok</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Thu</div>
+            <div class="day-type">Event Recap</div>
+            <div class="day-plat">IG Carousel</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Fri</div>
+            <div class="day-type">Tip / Guide</div>
+            <div class="day-plat">IG Post + LinkedIn</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Sat</div>
+            <div class="day-type">Weekend Event</div>
+            <div class="day-plat">IG Stories (live)</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Sun</div>
+            <div class="day-type">Rest / Repurpose</div>
+            <div class="day-plat">Schedule next wk</div>
+        </div>
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+<!-- ═══ PAGE 6: SOCIAL DETAIL + PLATFORMS ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">06</div></div>
+
+    <div class="tag">Platform Strategy</div>
+    <h2 class="st">Where to show up and how</h2>
+
+    <div class="social-grid">
+        <div class="s-card">
+            <div class="s-freq">Primary - 5x per week</div>
+            <h4>Instagram</h4>
+            <p>Your main platform. Luxury transport is inherently visual. Focus on Reels (cinematic car content gets insane reach), carousels (venue guides, wedding tips), and Stories (event day BTS). Use location tags for Brisbane, Gold Coast, Sunshine Coast on every post. Hashtags: #brisbanewedding #brisbanelimo #luxurycarbrisbane #weddingcarbrisbane #brisbanechauffeur</p>
+        </div>
+        <div class="s-card">
+            <div class="s-freq">Secondary - 3x per week</div>
+            <h4>TikTok</h4>
+            <p>Repurpose your best Reels. TikTok loves luxury car content and behind-the-scenes. The "day in the life of a wedding chauffeur" format goes viral. Film Adrian's routine, the car prep ritual, the bride's first reaction seeing the Bentley. Trending sounds + luxury visuals = reach.</p>
+        </div>
+        <div class="s-card">
+            <div class="s-freq">Weekly - 1-2x per week</div>
+            <h4>Facebook</h4>
+            <p>Still where Brisbane brides plan weddings (Facebook groups). Share wedding event photos, client testimonials, and join Brisbane wedding planning groups. Cross-post your best IG content. Keep the business page active with reviews and recommendations enabled.</p>
+        </div>
+        <div class="s-card">
+            <div class="s-freq">Monthly - 2-4x per month</div>
+            <h4>LinkedIn</h4>
+            <p>Target corporate clients. Post about corporate transport solutions, conference logistics, client entertainment. Adrian's professional background (security) adds credibility. Connect with event planners, PAs, and office managers across Brisbane.</p>
+        </div>
+    </div>
+
+    <div class="tag" style="margin-top: 25px;">Quick Win Content Ideas (film this week)</div>
+    <div class="card">
+        <div class="pri done"></div>
+        <div class="card-title" style="font-size: 14px;">10 Reels you can film today</div>
+        <div class="card-detail" style="margin-top: 10px;">
+            1. <strong>Bentley walkaround</strong> - 15 sec cinematic, trending audio<br>
+            2. <strong>"POV: Your wedding car arrives"</strong> - bride's eye view of the Bentley pulling up<br>
+            3. <strong>Adrian's morning routine</strong> - prepping the cars, polishing, checking the route<br>
+            4. <strong>Fleet lineup</strong> - drone or wide shot of all vehicles together<br>
+            5. <strong>"Name a more iconic wedding car"</strong> - close-up details, leather, badges<br>
+            6. <strong>Before/after detailing</strong> - satisfying cleaning content performs well<br>
+            7. <strong>Client testimonial reading</strong> - Adrian or Leanne reading a 5-star review<br>
+            8. <strong>"Things your limo driver notices"</strong> - wholesome chauffeur perspective<br>
+            9. <strong>Venue arrival</strong> - the car pulling up to a Brisbane wedding venue<br>
+            10. <strong>"How we set up for a wedding"</strong> - ribbons, flowers, champagne, red carpet
+        </div>
+    </div>
+
+    <div class="callout" style="margin-top: 20px;">
+        <div class="tag">Growth Targets</div>
+        <h3>90-day social media goals</h3>
+        <div class="callout-stats">
+            <div><div class="cs-num">500+</div><div class="cs-lab">IG Followers (from 196)</div></div>
+            <div><div class="cs-num">3-5</div><div class="cs-lab">Posts per Week</div></div>
+            <div><div class="cs-num">10+</div><div class="cs-lab">New Google Reviews</div></div>
+            <div><div class="cs-num">2-3</div><div class="cs-lab">Enquiries from Social</div></div>
+        </div>
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+<!-- ═══ PAGE 7: TIMELINE + NEXT STEPS ═══ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">07</div></div>
+
+    <div class="tag">Implementation Timeline</div>
+    <h2 class="st">What happens when</h2>
+
+    <div class="card" style="border-left: 3px solid var(--red);">
+        <div class="card-head">
+            <div><div class="card-num">Week 1</div><div class="card-title">Immediate fixes (we code this in)</div></div>
+        </div>
+        <div class="card-detail">
+            Fix all meta description typos. Fix page titles. Add full address + Google Map to contact page. Add LocalBusiness schema to every page. Add Review schema to testimonials. Claim/optimise Google Business Profile. Remove outdated COVID/quarantine pages.
+        </div>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--rose-dark);">
+        <div class="card-head">
+            <div><div class="card-num">Week 2-3</div><div class="card-title">Content and structure</div></div>
+        </div>
+        <div class="card-detail">
+            Add FAQ sections with schema to Weddings, Airport, Corporate pages. Write the entity definition paragraph. Rewrite About page (320 to 800+ words). Consolidate airport transfer pages. Add pricing guidance. Film first batch of social content (10 Reels).
+        </div>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--navy);">
+        <div class="card-head">
+            <div><div class="card-num">Week 4-6</div><div class="card-title">Authority building</div></div>
+        </div>
+        <div class="card-detail">
+            Create Brisbane Wedding Car Guide pillar page (3,000+ words). Build Gold Coast and Sunshine Coast landing pages. Restart blog with 2 fresh posts. Social posting rhythm established (5x/week IG, 3x/week TikTok). Request 10+ Google reviews from recent clients. Apply to Three Best Rated Brisbane.
+        </div>
+    </div>
+
+    <div class="card" style="border-left: 3px solid var(--green);">
+        <div class="card-head">
+            <div><div class="card-num">Month 2-3</div><div class="card-title">Scale and maintain</div></div>
+        </div>
+        <div class="card-detail">
+            Blog publishing 2-4x/month. Social content rhythm on autopilot. Image optimisation pass (WebP, alt text, lazy loading). Link building outreach to venue partners. Monthly Google review requests. Monitor AI search citations and adjust content. Track Google Search Console for keyword movement.
+        </div>
+    </div>
+
+    <div class="callout" style="margin-top: 25px;">
+        <div class="tag">Expected Results</div>
+        <h3>What this looks like in 90 days</h3>
+        <p style="margin-bottom: 15px;">With these changes implemented, milimo should see:</p>
+        <div class="card-detail" style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); border: none;">
+            <strong style="color: white;">SEO:</strong> Improved rankings for "wedding car hire Brisbane", "limousine hire Brisbane", "airport transfer Brisbane". Gold stars appearing in Google results. Maps 3-pack visibility.<br><br>
+            <strong style="color: white;">GEO:</strong> milimo cited in AI search responses for Brisbane limousine queries. FAQ content appearing in Google's "People Also Ask" boxes.<br><br>
+            <strong style="color: white;">Social:</strong> 500+ Instagram followers, consistent content presence, 2-3 monthly enquiries directly from social media. Venue partners tagging and sharing milimo content.<br><br>
+            <strong style="color: white;">Reviews:</strong> 10+ fresh Google reviews closing the 5-year gap. Updated on-site testimonials from 2024-2026 clients.
+        </div>
+    </div>
+
+    <div class="conf">
+        Prepared by Kelly Wotherspoon - AI with Soul<br>
+        kelly@aiwithsoul.com.au
+    </div>
+
+    <div class="footer-bar"></div>
+</div>
+
+</body>
+</html>
