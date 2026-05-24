@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miKofi - Premium PNG Coffee for Australian Cafes</title>
+    <meta name="description" content="miKofi imports premium single-origin coffee from Papua New Guinea's highlands direct to Queensland cafes. Sustainable sourcing, community partnerships, exceptional flavour.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --espresso: #2C1810;
+            --dark-roast: #3E2723;
+            --medium-roast: #5D4037;
+            --light-roast: #8D6E63;
+            --crema: #D7CCC8;
+            --cream: #F5F0EB;
+            --gold: #C8A96E;
+            --gold-light: #D4B87A;
+            --highlight: #E8D5B7;
+            --white: #FEFCF9;
+            --forest: #2D4A3E;
+            --forest-light: #3A5F50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--espresso);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ── NAVIGATION ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(44, 24, 16, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 0.8rem 3rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-logo .bean {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--espresso) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2px;
+            font-weight: 500 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(44, 24, 16, 0.85) 0%,
+                rgba(62, 39, 35, 0.7) 40%,
+                rgba(45, 74, 62, 0.6) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(200, 169, 110, 0.4);
+            padding: 0.5rem 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            color: var(--white);
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-title .bean-letter {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--espresso);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 169, 110, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .hero-scroll .line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+        }
+
+        /* ── SECTIONS GENERAL ── */
+        section {
+            padding: 8rem 2rem;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--medium-roast);
+            max-width: 600px;
+        }
+
+        /* ── ORIGIN STORY ── */
+        .origin {
+            background: var(--white);
+            position: relative;
+        }
+
+        .origin-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .origin-images {
+            position: relative;
+            height: 650px;
+        }
+
+        .origin-img {
+            position: absolute;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .origin-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .origin-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .origin-img-1 {
+            width: 65%;
+            height: 70%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .origin-img-2 {
+            width: 55%;
+            height: 55%;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .origin-img-accent {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--gold);
+            opacity: 0.15;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            filter: blur(40px);
+        }
+
+        .origin-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light-roast);
+            margin-top: 0.3rem;
+        }
+
+        /* ── COFFEE SECTION ── */
+        .coffee {
+            background: var(--espresso);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coffee::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 169, 110, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .coffee-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .coffee-header .section-title {
+            color: var(--white);
+        }
+
+        .coffee-header .section-text {
+            color: rgba(255,255,255,0.7);
+            margin: 0 auto;
+        }
+
+        .coffee-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .coffee-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 3px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .coffee-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(200, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .coffee-card-img {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .coffee-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .coffee-card:hover .coffee-card-img img {
+            transform: scale(1.08);
+        }
+
+        .coffee-card-body {
+            padding: 2rem;
+        }
+
+        .coffee-card-region {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .coffee-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .coffee-card-notes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .note-tag {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid rgba(200, 169, 110, 0.3);
+            color: var(--gold-light);
+            border-radius: 20px;
+        }
+
+        .coffee-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ── IMPACT / SUSTAINABILITY ── */
+        .impact {
+            background: var(--cream);
+            position: relative;
+        }
+
+        .impact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .impact-content {
+            padding-top: 2rem;
+        }
+
+        .impact-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .impact-feature {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .impact-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .impact-feature h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .impact-feature p {
+            font-size: 0.9rem;
+            color: var(--medium-roast);
+            line-height: 1.6;
+        }
+
+        .impact-image {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            height: 700px;
+        }
+
+        .impact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .impact-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(to top, rgba(44, 24, 16, 0.9), transparent);
+            color: var(--white);
+        }
+
+        .impact-image-overlay blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-image-overlay cite {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        /* ── WHOLESALE / B2B ── */
+        .wholesale {
+            background: var(--white);
+            position: relative;
+        }
+
+        .wholesale-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wholesale-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .wholesale-header .section-text {
+            margin: 0 auto;
+        }
+
+        .wholesale-benefits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border: 1px solid var(--crema);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .benefit:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .benefit-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .benefit p {
+            font-size: 0.85rem;
+            color: var(--medium-roast);
+            line-height: 1.6;
+        }
+
+        /* ── FULL WIDTH IMAGE BREAK ── */
+        .image-break {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .image-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-break-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(44, 24, 16, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-break-content {
+            text-align: center;
+            color: var(--white);
+            max-width: 700px;
+            padding: 0 2rem;
+        }
+
+        .image-break-content .big-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-break-content .big-quote .gold {
+            color: var(--gold);
+        }
+
+        /* ── PROCESS ── */
+        .process {
+            background: var(--forest);
+            color: var(--white);
+            padding: 8rem 2rem;
+        }
+
+        .process-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 5rem;
+        }
+
+        .process-header .section-title {
+            color: var(--white);
+        }
+
+        .process-steps {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 1px;
+            background: rgba(200, 169, 110, 0.3);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            background: var(--forest);
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        /* ── CONTACT / CTA ── */
+        .contact {
+            background: var(--espresso);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 169, 110, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-text {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .contact-form select option {
+            background: var(--espresso);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-details {
+            margin-top: 3rem;
+            display: flex;
+            gap: 3rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .contact-detail-label {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .contact-detail-value {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-detail-value a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+
+        .contact-detail-value a:hover {
+            color: var(--gold);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1a0f09;
+            padding: 4rem 2rem 2rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .footer-logo .bean {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ── PARALLAX GRAIN ── */
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* ── HAMBURGER MENU ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .origin-grid,
+            .impact-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .origin-images {
+                height: 400px;
+            }
+
+            .impact-image {
+                height: 400px;
+            }
+
+            .wholesale-benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(44, 24, 16, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .coffee-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wholesale-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .origin-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .image-break {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FILM GRAIN TEXTURE -->
+    <div class="grain"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">mi<span class="bean">K</span>ofi</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#origin">Origin</a></li>
+            <li><a href="#coffee">The Coffee</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#wholesale" class="nav-cta">Partner With Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/14498531/pexels-photo-14498531.jpeg?auto=compress&cs=tinysrgb&w=1920">
+                <source src="https://videos.pexels.com/video-files/8608578/8608578-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Papua New Guinea to Queensland</div>
+            <h1 class="hero-title">
+                mi<span class="bean-letter">K</span><em>o</em>fi
+            </h1>
+            <p class="hero-subtitle">
+                Premium single-origin coffee from the highlands of Papua New Guinea,
+                delivered fresh to the cafes of Queensland.
+            </p>
+            <div class="hero-buttons">
+                <a href="#wholesale" class="btn btn-primary">Become a Partner</a>
+                <a href="#origin" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Discover</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- ORIGIN STORY -->
+    <section class="origin" id="origin">
+        <div class="origin-grid">
+            <div class="origin-images">
+                <div class="origin-img-accent"></div>
+                <div class="origin-img origin-img-1 reveal">
+                    <img src="https://images.pexels.com/photos/7125438/pexels-photo-7125438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coffee farmer harvesting coffee cherries in the highlands">
+                </div>
+                <div class="origin-img origin-img-2 reveal reveal-delay-2">
+                    <img src="https://images.pexels.com/photos/10874654/pexels-photo-10874654.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Green coffee cherries growing on the branch">
+                </div>
+            </div>
+            <div class="origin-content">
+                <div class="section-label reveal">Our Origin</div>
+                <h2 class="section-title reveal reveal-delay-1">From the highlands<br>of Papua New Guinea<br>to your cup</h2>
+                <p class="section-text reveal reveal-delay-2">
+                    In the misty highlands above Port Moresby, where coffee trees descended from
+                    Jamaican Blue Mountain seeds have grown since the 1920s, smallholder farmers
+                    cultivate some of the world's most extraordinary Arabica beans.
+                </p>
+                <br>
+                <p class="section-text reveal reveal-delay-2">
+                    miKofi partners directly with these farming communities - bringing their
+                    exceptional, naturally organic coffee to Queensland's finest cafes. Every bag
+                    supports local leaders, sustains highland communities, and delivers a flavour
+                    profile unlike anything else in the Australian market.
+                </p>
+                <div class="origin-stats reveal reveal-delay-3">
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Arabica</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1500m+</div>
+                        <div class="stat-label">Altitude</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Naturally Organic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL-WIDTH IMAGE BREAK -->
+    <div class="image-break">
+        <img src="https://images.pexels.com/photos/13795169/pexels-photo-13795169.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Aerial view of coffee plantation">
+        <div class="image-break-overlay">
+            <div class="image-break-content">
+                <p class="big-quote">
+                    "The closest coffee origin to Australia - yet the <span class="gold">most undiscovered</span>
+                    in the specialty world."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE COFFEE -->
+    <section class="coffee" id="coffee">
+        <div class="coffee-header">
+            <div class="section-label reveal">The Coffee</div>
+            <h2 class="section-title reveal reveal-delay-1">Single origin.<br>Highland grown.<br>Exceptional character.</h2>
+            <p class="section-text reveal reveal-delay-2">
+                PNG coffee carries a flavour profile that surprises even seasoned roasters -
+                sweet, fruity, with a syrupy body that stands up beautifully in milk-based drinks.
+            </p>
+        </div>
+        <div class="coffee-grid">
+            <div class="coffee-card reveal">
+                <div class="coffee-card-img">
+                    <img src="https://images.pexels.com/photos/36722821/pexels-photo-36722821.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Roasted coffee beans close up">
+                </div>
+                <div class="coffee-card-body">
+                    <div class="coffee-card-region">Western Highlands</div>
+                    <h3 class="coffee-card-name">Waghi Valley Reserve</h3>
+                    <div class="coffee-card-notes">
+                        <span class="note-tag">Mango</span>
+                        <span class="note-tag">Papaya</span>
+                        <span class="note-tag">Caramel</span>
+                    </div>
+                    <p class="coffee-card-desc">
+                        From the fertile Waghi Valley at 1,600m. Full-bodied with tropical fruit
+                        sweetness and a clean, lingering finish. Perfect as a house espresso.
+                    </p>
+                </div>
+            </div>
+            <div class="coffee-card reveal reveal-delay-1">
+                <div class="coffee-card-img">
+                    <img src="https://images.pexels.com/photos/37355972/pexels-photo-37355972.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dark roasted coffee beans">
+                </div>
+                <div class="coffee-card-body">
+                    <div class="coffee-card-region">Eastern Highlands</div>
+                    <h3 class="coffee-card-name">Goroka Gold</h3>
+                    <div class="coffee-card-notes">
+                        <span class="note-tag">Dark Chocolate</span>
+                        <span class="note-tag">Honey</span>
+                        <span class="note-tag">Floral</span>
+                    </div>
+                    <p class="coffee-card-desc">
+                        Grown in the shadow of Mount Michael. Medium roast with rich chocolate
+                        undertones, honey sweetness, and delicate floral aromatics. A crowd favourite.
+                    </p>
+                </div>
+            </div>
+            <div class="coffee-card reveal reveal-delay-2">
+                <div class="coffee-card-img">
+                    <img src="https://images.pexels.com/photos/33682396/pexels-photo-33682396.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coffee beans texture">
+                </div>
+                <div class="coffee-card-body">
+                    <div class="coffee-card-region">Simbu Province</div>
+                    <h3 class="coffee-card-name">Kundiawa Blend</h3>
+                    <div class="coffee-card-notes">
+                        <span class="note-tag">Brown Sugar</span>
+                        <span class="note-tag">Citrus</span>
+                        <span class="note-tag">Walnut</span>
+                    </div>
+                    <p class="coffee-card-desc">
+                        A versatile blend from Simbu's steep mountain gardens. Balanced body
+                        with brown sugar sweetness and bright citrus lift. Exceptional in milk.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="impact" id="impact">
+        <div class="impact-grid">
+            <div class="impact-content">
+                <div class="section-label reveal">Our Impact</div>
+                <h2 class="section-title reveal reveal-delay-1">Every cup<br>builds a community</h2>
+                <p class="section-text reveal reveal-delay-2">
+                    miKofi exists because great coffee should do more than taste good.
+                    Our supply chain is designed to keep value where it belongs - with the
+                    people who grow it.
+                </p>
+                <div class="impact-features">
+                    <div class="impact-feature reveal reveal-delay-1">
+                        <div class="impact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>Direct Community Partnerships</h4>
+                            <p>We work with local leaders in PNG's highland communities, ensuring fair returns reach the farmers and families who depend on the harvest.</p>
+                        </div>
+                    </div>
+                    <div class="impact-feature reveal reveal-delay-2">
+                        <div class="impact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <h4>Sustainable Supply Chain</h4>
+                            <p>Pre-roasted in origin, shipped direct to Queensland. Shorter distance than South American beans, supporting local PNG processing jobs.</p>
+                        </div>
+                    </div>
+                    <div class="impact-feature reveal reveal-delay-3">
+                        <div class="impact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Naturally Organic</h4>
+                            <p>PNG highland coffee grows without synthetic chemicals - not because of certification, but because that's simply how it's always been done.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-image reveal">
+                <img src="https://images.pexels.com/photos/7125439/pexels-photo-7125439.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coffee cherries ripening on the tree">
+                <div class="impact-image-overlay">
+                    <blockquote>"Coffee connects our highlands to the world. When that connection is fair, everyone thrives."</blockquote>
+                    <cite>PNG Highland Coffee Community</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="process-header">
+            <div class="section-label reveal">From Farm to Cafe</div>
+            <h2 class="section-title reveal reveal-delay-1">How it works</h2>
+        </div>
+        <div class="process-steps">
+            <div class="process-step reveal">
+                <div class="step-number">01</div>
+                <h4>Harvest</h4>
+                <p>Hand-picked at peak ripeness in PNG's highland growing regions by smallholder farming communities</p>
+            </div>
+            <div class="process-step reveal reveal-delay-1">
+                <div class="step-number">02</div>
+                <h4>Roast</h4>
+                <p>Expertly roasted in-country, preserving freshness and keeping processing jobs in the local community</p>
+            </div>
+            <div class="process-step reveal reveal-delay-2">
+                <div class="step-number">03</div>
+                <h4>Import</h4>
+                <p>Shipped direct from Port Moresby to Queensland - our closest coffee-growing neighbour</p>
+            </div>
+            <div class="process-step reveal reveal-delay-3">
+                <div class="step-number">04</div>
+                <h4>Deliver</h4>
+                <p>Fresh to your cafe with full training, equipment support, and ongoing partnership</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECOND IMAGE BREAK -->
+    <div class="image-break">
+        <img src="https://images.pexels.com/photos/15533806/pexels-photo-15533806.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Barista pouring latte art">
+        <div class="image-break-overlay">
+            <div class="image-break-content">
+                <p class="big-quote">
+                    Built for cafes. Backed by <span class="gold">real relationships</span>.
+                    Powered by the world's most underrated origin.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHOLESALE / B2B -->
+    <section class="wholesale" id="wholesale">
+        <div class="wholesale-container">
+            <div class="wholesale-header">
+                <div class="section-label reveal">Wholesale Partners</div>
+                <h2 class="section-title reveal reveal-delay-1">Your cafe deserves<br>something different</h2>
+                <p class="section-text reveal reveal-delay-2">
+                    miKofi is built for cafes who want to stand out. We don't just supply coffee -
+                    we partner with you to tell a story your customers will love.
+                </p>
+            </div>
+            <div class="wholesale-benefits">
+                <div class="benefit reveal">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                    </div>
+                    <h4>Exclusive Origin</h4>
+                    <p>Offer your customers a single-origin PNG coffee that no other supplier in Australia is building a brand around</p>
+                </div>
+                <div class="benefit reveal reveal-delay-1">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>Full Support</h4>
+                    <p>Barista training, equipment guidance, menu development, and marketing materials included with every partnership</p>
+                </div>
+                <div class="benefit reveal reveal-delay-2">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Reliable Supply</h4>
+                    <p>Consistent quality, regular deliveries across South East Queensland, and a team that answers the phone</p>
+                </div>
+                <div class="benefit reveal reveal-delay-3">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h4>A Story Worth Telling</h4>
+                    <p>Your customers want to know where their coffee comes from. miKofi gives them a story that matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact" id="contact">
+        <div class="contact-grid">
+            <div>
+                <div class="section-label reveal">Let's Talk</div>
+                <h2 class="section-title reveal reveal-delay-1">Ready to bring<br>something new<br>to your cafe?</h2>
+                <p class="section-text reveal reveal-delay-2">
+                    We'd love to hear from you. Whether you're a single-site cafe or a multi-venue
+                    group, miKofi has a partnership model that fits. Tell us about your business and
+                    we'll be in touch within 24 hours.
+                </p>
+                <div class="contact-details reveal reveal-delay-3">
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Email</span>
+                        <span class="contact-detail-value"><a href="mailto:hello@mikofi.com.au">hello@mikofi.com.au</a></span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Phone</span>
+                        <span class="contact-detail-value"><a href="tel:+61409969992">0409 969 992</a></span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Location</span>
+                        <span class="contact-detail-value">Brisbane, Queensland</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal reveal-delay-2" onsubmit="event.preventDefault(); alert('Thanks! This is a mockup - the real form will be connected soon.')">
+                <div class="form-row">
+                    <input type="text" placeholder="Your name" required>
+                    <input type="text" placeholder="Cafe name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email address" required>
+                    <input type="tel" placeholder="Phone number">
+                </div>
+                <select>
+                    <option value="" disabled selected>Weekly coffee volume</option>
+                    <option>Under 10kg</option>
+                    <option>10 - 30kg</option>
+                    <option>30 - 50kg</option>
+                    <option>50kg+</option>
+                </select>
+                <select>
+                    <option value="" disabled selected>I'm interested in...</option>
+                    <option>Wholesale partnership</option>
+                    <option>Sample tasting</option>
+                    <option>Equipment + coffee package</option>
+                    <option>Just learning more</option>
+                </select>
+                <textarea placeholder="Tell us about your cafe..."></textarea>
+                <button type="submit" class="btn btn-primary">Send Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">mi<span class="bean">K</span>ofi</div>
+            <div class="footer-links">
+                <a href="#origin">Origin</a>
+                <a href="#coffee">The Coffee</a>
+                <a href="#impact">Impact</a>
+                <a href="#wholesale">Wholesale</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 miKofi. Premium PNG Coffee for Australian Cafes.</span>
+            <span>Brisbane, Queensland</span>
+        </div>
+    </footer>
+
+    <script>
+        // ── NAV SCROLL EFFECT ──
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // ── MOBILE MENU ──
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ── SCROLL REVEAL ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── SMOOTH SCROLL FOR SAFARI ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
