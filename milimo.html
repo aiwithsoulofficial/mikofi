@@ -113,8 +113,33 @@
             position: relative; height: 100vh; min-height: 700px;
             display: flex; align-items: center; justify-content: center; overflow: hidden;
         }
-        .hero video {
+        .hero-ken-burns {
+            position: absolute; inset: 0; z-index: 0;
+        }
+        .kb-img {
             position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+            opacity: 0; transition: opacity 1.5s ease-in-out;
+        }
+        .kb-img.active { opacity: 1; }
+        .kb-1.active { animation: kb1 8s ease-in-out forwards; }
+        .kb-2.active { animation: kb2 8s ease-in-out forwards; }
+        .kb-3.active { animation: kb3 8s ease-in-out forwards; }
+        .kb-4.active { animation: kb4 8s ease-in-out forwards; }
+        @keyframes kb1 {
+            0% { transform: scale(1) translateX(0); }
+            100% { transform: scale(1.15) translateX(-3%); }
+        }
+        @keyframes kb2 {
+            0% { transform: scale(1.05) translateX(2%); }
+            100% { transform: scale(1.18) translateX(-2%); }
+        }
+        @keyframes kb3 {
+            0% { transform: scale(1) translateY(2%); }
+            100% { transform: scale(1.12) translateY(-2%); }
+        }
+        @keyframes kb4 {
+            0% { transform: scale(1.1) translateX(-2%); }
+            100% { transform: scale(1.2) translateX(2%); }
         }
         .hero-overlay {
             position: absolute; inset: 0;
@@ -344,9 +369,12 @@
 
 <!-- HERO -->
 <section class="hero">
-    <video autoplay muted loop playsinline poster="https://milimo.com.au/wp-content/uploads/2018/05/Brisbane-Limousine-Service-milimo-Bentley-Wedding-Brisbane.jpg">
-        <source src="https://videos.pexels.com/video-files/6872095/6872095-uhd_2560_1440_25fps.mp4" type="video/mp4">
-    </video>
+    <div class="hero-ken-burns">
+        <img src="https://milimo.com.au/wp-content/uploads/2024/12/Bentley2-1024x683.jpg" alt="milimo Bentley" class="kb-img kb-1 active">
+        <img src="https://milimo.com.au/wp-content/uploads/2024/12/Bentley29-1024x683.jpg" alt="milimo Bentley wedding" class="kb-img kb-2">
+        <img src="https://milimo.com.au/wp-content/uploads/2024/12/Bentley19-1024x683.jpg" alt="milimo Bentley" class="kb-img kb-3">
+        <img src="https://milimo.com.au/wp-content/uploads/2024/12/Bentley9-1024x683.jpg" alt="milimo Bentley detail" class="kb-img kb-4">
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <div class="hero-badge">Brisbane & South East Queensland's Premier Transport</div>
@@ -614,6 +642,15 @@
 </footer>
 
 <script>
+    // ── KEN BURNS SLIDESHOW ──
+    const kbImgs = document.querySelectorAll('.kb-img');
+    let kbIndex = 0;
+    setInterval(() => {
+        kbImgs[kbIndex].classList.remove('active');
+        kbIndex = (kbIndex + 1) % kbImgs.length;
+        kbImgs[kbIndex].classList.add('active');
+    }, 6000);
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80));
     document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active')));
