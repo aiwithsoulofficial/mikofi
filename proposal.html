@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milimo SEO & AI Search Quick Wins - AI with Soul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        :root {
+            --cream: #F8F4EF;
+            --cream-dark: #EDE6DB;
+            --navy: #1B2A4A;
+            --navy-light: #2C3E66;
+            --rose-gold: #C4A67D;
+            --rose-gold-light: #D4BC9A;
+            --rose-gold-dark: #A8895F;
+            --text: #2D2926;
+            --text-light: #6B6560;
+            --white: #FFFFFF;
+            --accent: #E8D5B7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #E8E0D6;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        @media print {
+            body { background: white; }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* ── COVER PAGE ── */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+            min-height: 297mm;
+            position: relative;
+        }
+
+        .cover-texture {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(196, 166, 125, 0.08) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(27, 42, 74, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cover-top-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--rose-gold), var(--navy), var(--rose-gold));
+        }
+
+        .cover-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--rose-gold-dark);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .cover-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .cover-title em {
+            font-style: italic;
+            color: var(--rose-gold-dark);
+        }
+
+        .cover-subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 420px;
+            line-height: 1.7;
+            margin-bottom: 50px;
+        }
+
+        .cover-meta {
+            display: flex;
+            gap: 40px;
+        }
+
+        .cover-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cover-meta-label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose-gold-dark);
+            font-weight: 500;
+        }
+
+        .cover-meta-value {
+            font-size: 14px;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .cover-footer {
+            padding: 30px 70px;
+            border-top: 1px solid var(--cream-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .aws-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--navy);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .aws-logo span {
+            color: var(--rose-gold-dark);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .cover-footer-text {
+            font-size: 10px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .cover-accent-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid rgba(196, 166, 125, 0.15);
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cover-accent-circle-2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid rgba(27, 42, 74, 0.08);
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ── CONTENT PAGES ── */
+        .content-page {
+            padding: 50px 70px 60px;
+            min-height: 297mm;
+            position: relative;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .page-header-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .page-header-logo span {
+            color: var(--rose-gold-dark);
+            font-style: italic;
+        }
+
+        .page-number {
+            font-size: 10px;
+            color: var(--text-light);
+            letter-spacing: 2px;
+        }
+
+        .section-label {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--rose-gold-dark);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 35px;
+        }
+
+        /* ── SCORE CARD ── */
+        .score-overview {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-radius: 4px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .score-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .score-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .score-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .score-total {
+            font-size: 20px;
+            color: var(--text-light);
+        }
+
+        .score-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--rose-gold-dark);
+            font-weight: 500;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: var(--cream);
+            border-radius: 3px;
+        }
+
+        .score-item-name {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        .score-item-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .score-item-value.low {
+            color: #C0392B;
+        }
+
+        .score-item-value.mid {
+            color: var(--rose-gold-dark);
+        }
+
+        .score-item-value.good {
+            color: #27AE60;
+        }
+
+        /* ── QUICK WINS ── */
+        .win-card {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-radius: 4px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .win-card:hover {
+            border-color: var(--rose-gold-light);
+            box-shadow: 0 4px 15px rgba(196, 166, 125, 0.12);
+        }
+
+        .win-priority {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .win-priority.critical { background: #C0392B; }
+        .win-priority.high { background: var(--rose-gold-dark); }
+        .win-priority.medium { background: var(--navy-light); }
+
+        .win-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .win-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            color: var(--rose-gold-dark);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .win-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        .win-tags {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .win-tag {
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .win-tag.impact-high {
+            background: rgba(196, 166, 125, 0.15);
+            color: var(--rose-gold-dark);
+        }
+
+        .win-tag.impact-critical {
+            background: rgba(192, 57, 43, 0.1);
+            color: #C0392B;
+        }
+
+        .win-tag.effort-low {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27AE60;
+        }
+
+        .win-tag.effort-mid {
+            background: rgba(27, 42, 74, 0.1);
+            color: var(--navy);
+        }
+
+        .win-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .win-detail {
+            font-size: 12px;
+            color: var(--text);
+            background: var(--cream);
+            padding: 12px 16px;
+            border-radius: 3px;
+            line-height: 1.6;
+        }
+
+        .win-detail strong {
+            color: var(--navy);
+        }
+
+        .win-detail code {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 11px;
+            background: rgba(27, 42, 74, 0.06);
+            padding: 1px 5px;
+            border-radius: 2px;
+            color: var(--navy);
+        }
+
+        /* ── AI SEARCH SECTION ── */
+        .ai-callout {
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 4px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .ai-callout .section-label {
+            color: var(--rose-gold-light);
+        }
+
+        .ai-callout-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .ai-callout-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .ai-callout-stat {
+            display: flex;
+            gap: 30px;
+        }
+
+        .ai-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .ai-stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--rose-gold-light);
+        }
+
+        .ai-stat-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ── NEXT STEPS ── */
+        .next-steps {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-radius: 4px;
+            padding: 30px;
+            margin-top: 25px;
+        }
+
+        .next-steps-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .step-circle {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border: 1px solid var(--rose-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            color: var(--rose-gold-dark);
+            font-weight: 600;
+        }
+
+        .step-text {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.5;
+            padding-top: 4px;
+        }
+
+        .step-text strong {
+            color: var(--navy);
+        }
+
+        /* ── FOOTER BAR ── */
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--rose-gold), var(--navy), var(--rose-gold));
+        }
+
+        .confidential {
+            text-align: center;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cream-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════ PAGE 1: COVER ═══════════ -->
+    <div class="page cover">
+        <div class="cover-texture"></div>
+        <div class="cover-top-bar"></div>
+        <div class="cover-content">
+            <div class="cover-accent-circle"></div>
+            <div class="cover-accent-circle-2"></div>
+            <div class="cover-label">SEO & AI Search Audit</div>
+            <h1 class="cover-title">
+                Quick Wins for<br>
+                <em>milimo.com.au</em>
+            </h1>
+            <p class="cover-subtitle">
+                A focused action plan to fix the highest-impact issues on your website
+                and get milimo visible in both Google and AI search results.
+            </p>
+            <div class="cover-meta">
+                <div class="cover-meta-item">
+                    <span class="cover-meta-label">Prepared For</span>
+                    <span class="cover-meta-value">Leanne Barsby</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-label">Date</span>
+                    <span class="cover-meta-value">24 May 2026</span>
+                </div>
+                <div class="cover-meta-item">
+                    <span class="cover-meta-label">Current Score</span>
+                    <span class="cover-meta-value">4.9 / 10</span>
+                </div>
+            </div>
+        </div>
+        <div class="cover-footer">
+            <div class="aws-logo">AI <span>with Soul</span></div>
+            <div class="cover-footer-text">kelly@aiwithsoul.com.au</div>
+        </div>
+    </div>
+
+    <!-- ═══════════ PAGE 2: AUDIT SCORES ═══════════ -->
+    <div class="page content-page">
+        <div class="page-header">
+            <div class="page-header-logo">AI <span>with Soul</span></div>
+            <div class="page-number">02</div>
+        </div>
+
+        <div class="section-label">Audit Overview</div>
+        <h2 class="section-title">Where milimo stands today</h2>
+        <p class="section-intro">
+            I've audited milimo.com.au across 12 categories covering traditional SEO,
+            technical performance, and AI search readiness. Here's the snapshot.
+        </p>
+
+        <div class="score-overview">
+            <div class="score-header">
+                <div class="score-main">
+                    <span class="score-number">4.9</span>
+                    <span class="score-total">/ 10</span>
+                </div>
+                <span class="score-label">Overall Score</span>
+            </div>
+            <div class="score-grid">
+                <div class="score-item">
+                    <span class="score-item-name">Title Tags & Meta Descriptions</span>
+                    <span class="score-item-value low">4/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Heading Structure</span>
+                    <span class="score-item-value mid">5/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Schema / Structured Data</span>
+                    <span class="score-item-value mid">5/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Internal Linking</span>
+                    <span class="score-item-value good">7/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Page Speed & Performance</span>
+                    <span class="score-item-value low">4/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Mobile Responsiveness</span>
+                    <span class="score-item-value mid">6/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Content Quality & Keywords</span>
+                    <span class="score-item-value low">4/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Local SEO</span>
+                    <span class="score-item-value mid">5/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Technical SEO</span>
+                    <span class="score-item-value mid">5/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">AI Search Readiness</span>
+                    <span class="score-item-value low">2/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Social Proof & Trust</span>
+                    <span class="score-item-value mid">6/10</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-item-name">Backlinks & Authority</span>
+                    <span class="score-item-value mid">6/10</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-callout">
+            <div class="section-label">The Biggest Gap</div>
+            <div class="ai-callout-title">AI Search Visibility: 2 out of 10</div>
+            <div class="ai-callout-text">
+                When someone asks ChatGPT, Perplexity, or Google's AI Overview for
+                "best Brisbane limousine service" - milimo won't be mentioned. Your site
+                has zero FAQ sections, no structured entity data, and no content formatted
+                for AI extraction. This is the single biggest opportunity.
+            </div>
+            <div class="ai-callout-stat">
+                <div class="ai-stat">
+                    <div class="ai-stat-number">0</div>
+                    <div class="ai-stat-label">FAQ Sections</div>
+                </div>
+                <div class="ai-stat">
+                    <div class="ai-stat-number">0</div>
+                    <div class="ai-stat-label">FAQ Schema</div>
+                </div>
+                <div class="ai-stat">
+                    <div class="ai-stat-number">5yr</div>
+                    <div class="ai-stat-label">Review Gap</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer"></div>
+    </div>
+
+    <!-- ═══════════ PAGE 3: QUICK WINS ═══════════ -->
+    <div class="page content-page">
+        <div class="page-header">
+            <div class="page-header-logo">AI <span>with Soul</span></div>
+            <div class="page-number">03</div>
+        </div>
+
+        <div class="section-label">This Week</div>
+        <h2 class="section-title">Quick wins with immediate impact</h2>
+        <p class="section-intro">
+            These are the fixes that will make the biggest difference the fastest.
+            No redesign needed - just targeted corrections to what's already there.
+        </p>
+
+        <div class="win-card">
+            <div class="win-priority critical"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">01</div>
+                    <div class="win-title">Fix the typos in your meta descriptions</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-critical">Critical</span>
+                    <span class="win-tag effort-low">10 min fix</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                Your homepage, fleet page, and blog page all have spelling errors in the meta descriptions
+                that Google shows in search results. This kills credibility before anyone clicks.
+            </div>
+            <div class="win-detail">
+                <strong>What to fix:</strong><br>
+                Homepage: <code>Mercesdes-Benz</code> should be <code>Mercedes-Benz</code><br>
+                Fleet page: <code>Merecdes</code> and <code>afforable</code> should be <code>Mercedes</code> and <code>affordable</code><br>
+                Blog page: <code>Coprorate</code> should be <code>Corporate</code>, and <code>is are available</code> is broken grammar
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority critical"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">02</div>
+                    <div class="win-title">Add your full address and Google Maps</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-critical">Critical</span>
+                    <span class="win-tag effort-low">15 min fix</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                Your contact page only shows "Geebung, Queensland" - no street address, no map,
+                no business hours. Google needs this to put you in the local map pack.
+            </div>
+            <div class="win-detail">
+                <strong>Add to contact page:</strong> Full street address, business hours (24/7),
+                embedded Google Map, and a link to your Google Business Profile.
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority critical"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">03</div>
+                    <div class="win-title">Claim or optimise your Google Business Profile</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-critical">Critical</span>
+                    <span class="win-tag effort-mid">30 min</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                Your Google Business Profile appears to be absent or poorly optimised. This is
+                the single most important thing for a local service business. Competitors who
+                show up in the Google Maps 3-pack get the clicks.
+            </div>
+            <div class="win-detail">
+                <strong>Action:</strong> Claim the profile at business.google.com, add all services,
+                upload 20+ high-quality vehicle photos, add business hours, service areas,
+                and start requesting Google reviews from recent clients.
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority high"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">04</div>
+                    <div class="win-title">Fix your page titles - stop repeating "Wedding Car Hire Brisbane"</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-high">High Impact</span>
+                    <span class="win-tag effort-low">15 min fix</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                Your Fleet, Contact, and Reviews pages all have "Wedding Car Hire Brisbane" appended
+                to the title. This confuses Google about what each page is actually about.
+            </div>
+            <div class="win-detail">
+                <strong>Each page needs its own keyword:</strong><br>
+                Fleet: <code>Luxury Fleet - Bentley, Mercedes, Genesis | milimo Brisbane</code><br>
+                Contact: <code>Contact milimo Brisbane | 1300 884 536</code><br>
+                Reviews: <code>Customer Reviews | milimo Brisbane Limousine Service</code>
+            </div>
+        </div>
+
+        <div class="page-footer"></div>
+    </div>
+
+    <!-- ═══════════ PAGE 4: MORE QUICK WINS + AI SEARCH ═══════════ -->
+    <div class="page content-page">
+        <div class="page-header">
+            <div class="page-header-logo">AI <span>with Soul</span></div>
+            <div class="page-number">04</div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority high"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">05</div>
+                    <div class="win-title">Add LocalBusiness schema to every page</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-high">High Impact</span>
+                    <span class="win-tag effort-mid">30 min</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                Your site has basic schema from Yoast but is missing LocalBusiness structured data.
+                This is what tells Google (and AI search engines) your exact location, services,
+                hours, and service area.
+            </div>
+            <div class="win-detail">
+                <strong>Add JSON-LD:</strong> Business name, full address, geo coordinates, phone,
+                opening hours, price range, service area (Brisbane, Gold Coast, Sunshine Coast),
+                aggregate rating from your reviews.
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority high"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">06</div>
+                    <div class="win-title">Add review schema to your testimonials</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-high">High Impact</span>
+                    <span class="win-tag effort-low">20 min</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                You have 20+ glowing reviews on your site and 4.9 on Easy Weddings - but Google
+                doesn't know about them because there's no Review schema. Adding this unlocks
+                star ratings in search results.
+            </div>
+            <div class="win-detail">
+                <strong>Result:</strong> Gold stars appear next to your listing in Google search results.
+                This dramatically increases click-through rate. Your competitors who have this
+                are getting clicks you're missing.
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority high"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">07</div>
+                    <div class="win-title">Add FAQ sections to your top 3 service pages</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-high">High Impact</span>
+                    <span class="win-tag effort-mid">1-2 hours</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                This is the #1 thing missing for AI search visibility. When someone asks ChatGPT
+                "how much does a wedding car cost in Brisbane?" - your site has no answer to extract.
+                Adding FAQs with schema fixes this for both Google and AI.
+            </div>
+            <div class="win-detail">
+                <strong>Weddings page:</strong> How much does a wedding car cost? How far ahead should I book?
+                Do you provide decorations? Can you do multiple trips?<br>
+                <strong>Airport:</strong> How much is a limo to the Gold Coast? Do you track flight arrivals?<br>
+                <strong>Corporate:</strong> Do you offer accounts? Can you handle conference logistics?
+            </div>
+        </div>
+
+        <div class="win-card">
+            <div class="win-priority high"></div>
+            <div class="win-header">
+                <div>
+                    <div class="win-number">08</div>
+                    <div class="win-title">Collect fresh reviews (your latest is from 2021)</div>
+                </div>
+                <div class="win-tags">
+                    <span class="win-tag impact-high">High Impact</span>
+                    <span class="win-tag effort-mid">Ongoing</span>
+                </div>
+            </div>
+            <div class="win-desc">
+                There's a 5-year gap in your on-site testimonials. Both Google and AI search engines
+                treat freshness as a quality signal. A business with no reviews since 2021 looks
+                like it might not be active anymore.
+            </div>
+            <div class="win-detail">
+                <strong>Quick approach:</strong> Email your 10 most recent clients and ask for a Google
+                review. Add a review request link to your post-service email. Aim for 2-3 new
+                Google reviews per month minimum.
+            </div>
+        </div>
+
+        <div class="page-footer"></div>
+    </div>
+
+    <!-- ═══════════ PAGE 5: WHAT'S WORKING + NEXT STEPS ═══════════ -->
+    <div class="page content-page">
+        <div class="page-header">
+            <div class="page-header-logo">AI <span>with Soul</span></div>
+            <div class="page-number">05</div>
+        </div>
+
+        <div class="section-label">The Good News</div>
+        <h2 class="section-title">What's already working for you</h2>
+        <p class="section-intro">
+            milimo has real strengths that most businesses would kill for. The foundation
+            is solid - it's the digital layer that needs attention.
+        </p>
+
+        <div class="win-card" style="border-left: 3px solid #27AE60;">
+            <div class="win-desc" style="margin-bottom: 0;">
+                <strong style="color: var(--navy); font-size: 14px;">Your 30+ venue-specific pages</strong> are a smart local SEO strategy - most competitors don't have this.<br><br>
+                <strong style="color: var(--navy); font-size: 14px;">TripAdvisor 5.0/5.0</strong> with Travellers' Choice award and <strong>Easy Weddings 4.9/5.0</strong> (25 reviews) - your service quality is genuinely excellent.<br><br>
+                <strong style="color: var(--navy); font-size: 14px;">Your fleet diversity</strong> (Bentley to 57-seat coaches) is rare - few competitors offer this range.<br><br>
+                <strong style="color: var(--navy); font-size: 14px;">Domain age since ~2000</strong> gives you authority that new competitors can't buy.<br><br>
+                <strong style="color: var(--navy); font-size: 14px;">Family-owned authenticity</strong> - customers praise Adrian and the team by name. This personal touch is your biggest differentiator and it's genuine.
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <div class="next-steps-title">Recommended next steps</div>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">
+                        <strong>This week:</strong> Fix the typos, add your full address, and claim your
+                        Google Business Profile. These 3 things take under an hour and have immediate impact.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">
+                        <strong>Next 2 weeks:</strong> Add FAQ sections with schema to your Weddings,
+                        Airport, and Corporate pages. Add review schema to your testimonials page.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">
+                        <strong>This month:</strong> Rewrite your About page (it's only 320 words - needs 800+),
+                        deepen your Weddings page content, and start collecting fresh reviews.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">4</div>
+                    <div class="step-text">
+                        <strong>Ongoing:</strong> Restart the blog (2-4 posts per month), build location
+                        landing pages for Gold Coast and Sunshine Coast, and create an AI-optimised
+                        pillar page for Brisbane wedding cars.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confidential">
+            Prepared by Kelly Wotherspoon - AI with Soul<br>
+            kelly@aiwithsoul.com.au
+        </div>
+
+        <div class="page-footer"></div>
+    </div>
+
+</body>
+</html>
