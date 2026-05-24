@@ -101,6 +101,22 @@
         .tl-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--navy); font-weight: 600; }
         .tl-body p { font-size: 11px; color: var(--text-light); line-height: 1.5; }
 
+        /* Phase blocks */
+        .phase-block { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 24px 28px; margin-bottom: 0; }
+        .phase-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; margin-bottom: 6px; }
+        .phase-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--navy); font-weight: 400; margin-bottom: 4px; }
+        .phase-sub { font-size: 12px; color: var(--text-light); font-style: italic; margin-bottom: 14px; }
+        .phase-list { list-style: none; padding: 0; margin: 0; }
+        .phase-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 7px; }
+        .phase-list li::before { content: ''; width: 16px; height: 16px; min-width: 16px; border: 2px solid var(--rose-dark); border-radius: 50%; background: rgba(196,166,125,0.15); margin-top: 1px; display: block; }
+
+        /* Done checklist cards */
+        .done-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+        .done-check { width: 24px; height: 24px; min-width: 24px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+        .done-check svg { width: 13px; height: 13px; }
+        .done-card-text { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+        .done-card-text strong { color: var(--navy); display: block; margin-bottom: 2px; font-size: 13px; }
+
         .conf { text-align: center; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--cream-dark); }
 
         /* Nature breakers */
@@ -482,9 +498,252 @@
     </div>
 </div>
 
-<!-- ═══════ PAGE 7: PRICING ═══════ -->
+<!-- ═══════ PAGE 7: WHAT'S ALREADY DONE ═══════ -->
 <div class="page cp">
     <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">07</div></div>
+
+    <div class="tag">Already Completed</div>
+    <h2 class="st">We haven't waited.<br><em style="font-style: italic; color: var(--rose-dark);">Look what's done.</em></h2>
+    <p class="si">Before you even signed anything, we were working. Here's everything already completed and ready to deploy. This is what momentum looks like.</p>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Full SEO & AI search audit of milimo.com.au</strong>
+            Scored 4.9/10 - we know exactly what to fix and have the full repair plan ready to execute.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Complete competitor analysis across 15+ Brisbane limo companies</strong>
+            We know exactly where the gaps are and which segments nobody in Brisbane is owning yet.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>AI search query research - 60+ queries mapped</strong>
+            Every query brides, formals, corporate, and government bookers type into ChatGPT and Google AI. Milimo will answer every one.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Full FAQ content bank written - 24 questions with complete answers</strong>
+            Ready to deploy with schema markup. Your site will own the FAQ space on Google.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>New milimo website mockup built</strong>
+            Cinematic design using your actual Bentley photos. Ready for your approval and immediate development.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>MiKofi website mockup built</strong>
+            Premium B2B coffee brand with full GEO optimisation. The wholesale portal is designed and ready.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>MiKofi logo background removed and prepared for web</strong>
+            Clean PNG ready for the new site, social media headers, and all marketing materials.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Social media strategy designed</strong>
+            Content pillars, weekly posting calendar, platform breakdown, hashtag strategy. Ready to switch on.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Daily SEO checklist created for Leanne</strong>
+            Simple, actionable, specific to milimo. No jargon - just what to do and when to do it.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Schema markup prepared - LocalBusiness, FAQ, and Reviews</strong>
+            Coded and ready to deploy on day one. Gold stars in Google results from week one.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Social media content mockups created using your actual fleet photos</strong>
+            Branded, designed, and formatted. Not generic - your Bentley, your cars, your identity.
+        </div>
+    </div>
+
+    <div class="done-card">
+        <div class="done-check">
+            <svg viewBox="0 0 13 13" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,7 5,10 11,3"/></svg>
+        </div>
+        <div class="done-card-text">
+            <strong>Government & VIP transport content written</strong>
+            A segment no competitor in Brisbane owns. The copy, the positioning, the page structure - done.
+        </div>
+    </div>
+
+    <div class="fb"></div>
+</div>
+
+<!-- NATURE BREAK -->
+<div class="page" style="min-height: 0;">
+    <div class="nature-break" style="height: 200px;">
+        <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mountain lake at dawn">
+        <div class="nature-break-overlay">
+            <div class="nature-break-text">The hard yards are already done. Now we build.</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════ PAGE 8: THE PHASES ═══════ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">08</div></div>
+
+    <div class="tag">Your Roadmap</div>
+    <h2 class="st">Three phases.<br><em style="font-style: italic; color: var(--rose-dark);">Twelve weeks.</em></h2>
+    <p class="si">We've designed this so every step builds on the last - no overwhelm, no chaos. Just steady, compounding momentum. Here's exactly what happens and when.</p>
+
+    <!-- Phase 1 -->
+    <div class="phase-block" style="border-left: 4px solid var(--navy);">
+        <div class="phase-label">Phase 1 - Weeks 1 to 4</div>
+        <div class="phase-title">Foundation</div>
+        <div class="phase-sub">"Getting you found"</div>
+        <ul class="phase-list">
+            <li>milimo website goes live with full SEO and AI search optimisation</li>
+            <li>All meta tags, titles, and descriptions corrected across every page</li>
+            <li>LocalBusiness schema deployed on every page</li>
+            <li>FAQ sections with schema added - weddings, formals, corporate, government</li>
+            <li>Google Business Profile fully optimised and verified</li>
+            <li>Review schema added for gold stars in Google results</li>
+            <li>Entity definition paragraph written and deployed</li>
+            <li>Airport transfer pages consolidated for maximum SEO impact</li>
+            <li>Outdated COVID and quarantine pages removed</li>
+            <li>Fresh review collection campaign launched</li>
+        </ul>
+    </div>
+
+    <div class="nature-break" style="height: 110px; border-radius: 4px; overflow: hidden; margin: 14px 0;">
+        <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ocean at sunrise">
+        <div class="nature-break-overlay" style="background: linear-gradient(135deg, rgba(27,42,74,0.5), rgba(196,166,125,0.3));">
+            <div class="nature-break-text" style="font-size: 17px; font-style: italic;">"The foundation changes everything"</div>
+        </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-block" style="border-left: 4px solid var(--rose-dark);">
+        <div class="phase-label">Phase 2 - Weeks 5 to 8</div>
+        <div class="phase-title">Growth</div>
+        <div class="phase-sub">"Building your audience"</div>
+        <ul class="phase-list">
+            <li>MiKofi website goes live</li>
+            <li>Social media takeover begins - 15+ posts per week across all platforms</li>
+            <li>Ad campaigns launched on Facebook, Instagram, and Google</li>
+            <li>Content calendar rolling - fleet features, wedding BTS, testimonials, tips</li>
+            <li>Blog content publishing starts - Brisbane Wedding Car Guide pillar page</li>
+            <li>Google review automation deployed</li>
+            <li>Monthly reporting dashboard set up</li>
+            <li>Corporate landing page live with PA-specific messaging</li>
+            <li>Government and VIP page live - the first in Brisbane to own this space</li>
+        </ul>
+    </div>
+
+    <div class="nature-break" style="height: 110px; border-radius: 4px; overflow: hidden; margin: 14px 0;">
+        <img src="https://images.pexels.com/photos/1612353/pexels-photo-1612353.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sunlight through forest trees">
+        <div class="nature-break-overlay" style="background: linear-gradient(135deg, rgba(27,42,74,0.45), rgba(196,166,125,0.25));">
+            <div class="nature-break-text" style="font-size: 17px; font-style: italic;">"Watch it grow"</div>
+        </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-block" style="border-left: 4px solid var(--green);">
+        <div class="phase-label">Phase 3 - Weeks 9 to 12</div>
+        <div class="phase-title">Automation</div>
+        <div class="phase-sub">"Your business on autopilot"</div>
+        <ul class="phase-list">
+            <li>AI Operating System fully deployed</li>
+            <li>Automated review requests after every job - no manual follow-up required</li>
+            <li>Booking confirmation and reminder sequences live</li>
+            <li>Lead follow-up automation active - no enquiry falls through the cracks</li>
+            <li>Email templates ready for every scenario</li>
+            <li>Social posting on autopilot rhythm</li>
+            <li>Ad campaigns optimising based on real data</li>
+            <li>Gold Coast and Sunshine Coast landing pages live</li>
+            <li>School formal campaign ready for peak season</li>
+            <li>Monthly performance review and strategy adjustment</li>
+        </ul>
+    </div>
+
+    <div class="nature-break" style="height: 110px; border-radius: 4px; overflow: hidden; margin: 14px 0;">
+        <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mountain vista">
+        <div class="nature-break-overlay" style="background: linear-gradient(135deg, rgba(27,42,74,0.45), rgba(196,166,125,0.25));">
+            <div class="nature-break-text" style="font-size: 17px; font-style: italic;">"Freedom feels like this"</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 18px 24px; background: var(--cream-dark); border-radius: 4px; margin-top: 4px;">
+        <p style="font-size: 12.5px; color: var(--text-light); line-height: 1.7; font-style: italic; max-width: 500px; margin: 0 auto;">We've designed this as a 3-month rollout so nothing feels rushed. But between you and us - most of this will be done much faster than that.</p>
+    </div>
+
+    <div class="fb"></div>
+</div>
+
+<!-- NATURE BREAK -->
+<div class="page" style="min-height: 0;">
+    <div class="nature-break" style="height: 200px;">
+        <img src="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sunrise over calm water">
+        <div class="nature-break-overlay">
+            <div class="nature-break-text">Your breakthrough starts now</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════ PAGE 9: PRICING ═══════ -->
+<div class="page cp">
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">09</div></div>
 
     <div class="tag">Investment</div>
     <h2 class="st">Simple pricing.<br>No surprises.</h2>
@@ -560,16 +819,16 @@
 <!-- NATURE BREAK -->
 <div class="page" style="min-height: 0;">
     <div class="nature-break" style="height: 200px;">
-        <img src="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sunrise over calm water">
+        <img src="https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lavender field at golden hour">
         <div class="nature-break-overlay">
-            <div class="nature-break-text">Your breakthrough starts now</div>
+            <div class="nature-break-text">You've already done the hardest part - believing this is possible</div>
         </div>
     </div>
 </div>
 
-<!-- ═══════ PAGE 8: TIMELINE & SIGN OFF ═══════ -->
+<!-- ═══════ PAGE 10: TIMELINE & SIGN OFF ═══════ -->
 <div class="page cp">
-    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">08</div></div>
+    <div class="ph"><div class="logo">AI <span>with Soul</span></div><div class="pn">10</div></div>
 
     <div class="tag">How It Happens</div>
     <h2 class="st">Your timeline</h2>
